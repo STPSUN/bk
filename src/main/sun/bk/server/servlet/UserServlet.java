@@ -69,8 +69,8 @@ public class UserServlet extends HttpServlet {
 
             JSONObject json = JSONObject.fromObject(apiResponse);
             out.println(json);
-            request.setAttribute("login", json);
+//            request.setAttribute("login", json);
         }
-        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
+//        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
     }
 }
