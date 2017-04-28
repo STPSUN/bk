@@ -13,11 +13,15 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
-        <url-pattern>/users</url-pattern>
+        <url-pattern>/bk/users</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EssayServlet</servlet-name>
-        <url-pattern>/essay</url-pattern>
+        <url-pattern>/bk/essay</url-pattern>
     </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file>test.jsp</welcome-file>
+    </welcome-file-list>
 
 </web-app>
