@@ -77,11 +77,15 @@ public class UserServlet extends HttpServlet {
                 apiResponse.setCode("201");
                 apiResponse.setMsg("用户不存在");
             }
-
-            JSONObject json = JSONObject.fromObject(apiResponse);
-            out.println(json);
-            request.setAttribute("login", json);
+        }else
+        {
+            apiResponse.setCode("201");
+            apiResponse.setMsg("用户名和密码不能为空");
         }
-        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
+
+        JSONObject json = JSONObject.fromObject(apiResponse);
+        out.println(json);
+//        request.setAttribute("login", json);
+//        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
     }
 }

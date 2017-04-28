@@ -92,8 +92,8 @@ public class EssayServlet extends HttpServlet {
 
         JSONObject json = JSONObject.fromObject(apiResponse);
         out.println(json);
-        request.setAttribute("getEssayByRecommend", json);
-        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
+//        request.setAttribute("getEssayByRecommend", json);
+//        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
     }
 
     private void doGetEssayByZan(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -113,8 +113,8 @@ public class EssayServlet extends HttpServlet {
 
         JSONObject json = JSONObject.fromObject(apiResponse);
         out.println(json);
-        request.setAttribute("getEssayByZan", json);
-        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
+//        request.setAttribute("getEssayByZan", json);
+//        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
     }
 
     private void doGetAllEssay(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -134,8 +134,8 @@ public class EssayServlet extends HttpServlet {
 
         JSONObject json = JSONObject.fromObject(apiResponse);
         out.println(json);
-        request.setAttribute("getAllEssay", json);
-        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
+//        request.setAttribute("getAllEssay", json);
+//        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
     }
 
     private void doAddEssay(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -178,8 +178,8 @@ public class EssayServlet extends HttpServlet {
 
         JSONObject json = JSONObject.fromObject(apiResponse);
         out.println(json);
-        request.setAttribute("addEssay", json);
-        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
+//        request.setAttribute("addEssay", json);
+//        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
     }
 
     private void setApi(Object object, int state, String attribute, HttpServletResponse response, HttpServletRequest request) throws IOException, ServletException
@@ -198,7 +198,7 @@ public class EssayServlet extends HttpServlet {
 
         JSONObject json = JSONObject.fromObject(apiResponse);
         out.println(json);
-        request.setAttribute(attribute, json);
-        request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
+//        request.setAttribute(attribute, json);
+//        request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
     }
 }
