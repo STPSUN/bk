@@ -32,11 +32,22 @@ public class UserServlet extends HttpServlet {
         {
             doLogin(request, response);
         }
+        if("register".equals(action))
+        {
+            doRegister(request, response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         doPost(request, response);
+    }
+
+    private void doRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("password");
+        String authCode = request.getParameter("authCode");
     }
 
     private void doLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -69,8 +80,8 @@ public class UserServlet extends HttpServlet {
 
             JSONObject json = JSONObject.fromObject(apiResponse);
             out.println(json);
-//            request.setAttribute("login", json);
+            request.setAttribute("login", json);
         }
-//        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
     }
 }

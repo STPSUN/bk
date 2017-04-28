@@ -31,7 +31,7 @@
             },
             success:function(msgString){
                 alert("into fun" + msgString.msg)
-                if(msgString.code=='200'){
+                if(msgString.code == '200'){
                     console.log(msgString.data.userName+','+msgString.data.password);
                 }
                 else {

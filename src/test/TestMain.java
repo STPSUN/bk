@@ -1,10 +1,15 @@
 package test;
 
+import main.sun.bk.server.common.SMSUtils;
+import main.sun.bk.server.daily.model.Daily;
+import main.sun.bk.server.daily.service.impl.DailyServiceImpl;
 import main.sun.bk.server.essay.model.Essay;
 import main.sun.bk.server.essay.service.impl.EssayServiceImpl;
 import main.sun.bk.server.users.model.User;
 import main.sun.bk.server.users.service.impl.UserServiceImpl;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,6 +19,7 @@ public class TestMain {
 //    private UserService userService;
     private UserServiceImpl userService = new UserServiceImpl();
     private EssayServiceImpl essayService = new EssayServiceImpl();
+    private DailyServiceImpl dailyService = new DailyServiceImpl();
     public static void main(String[] args)
     {
         System.out.println("hello");
@@ -25,7 +31,38 @@ public class TestMain {
 //        test.getAllEssayLikeTilte();
 //        test.getAllEssayByType();
 //        test.getAllEssayByZanDesc();
-        test.getAllEssay();
+//        test.getAllEssay();
+//        test.addDaily();
+//        test.getAllDaily();
+        test.sendSMS();
+    }
+
+    public void sendSMS()
+    {
+        String code = "0000";
+        String mobile = "18850705207";
+        SMSUtils smsUtils = new SMSUtils();
+        smsUtils.sendCheckCodeSMS(code, mobile);
+    }
+
+    public void getAllDaily()
+    {
+        List<Daily> dailyList = dailyService.getAllDaily();
+        for (Daily daily : dailyList)
+        {
+            System.out.println(daily.getDailyId());
+        }
+    }
+
+    public void addDaily()
+    {
+        Daily daily = new Daily();
+        SimpleDateFormat df = new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
+        daily.setCreateTime(df.format(new Date()));
+        daily.setContent("dwaaa");
+        daily.setZan(4);
+
+        dailyService.addDaily(daily);
     }
 
     public void getUserByUserName()
