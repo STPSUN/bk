@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05faecdf-2f8a-4839-826a-e92af4997b68" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/taobao-sdk-java-auto_1455552377940-20161028.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/comment/test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/common/IsMobile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/common/SMSUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/daily/dao/DailyDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/daily/dao/Impl/DailyImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/daily/model/Daily.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/daily/service/DailyService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/daily/service/impl/DailyServiceImpl.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/bk/main/sun/bk/server/essay/test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/bk/main/sun/bk/server/test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/sun/bk/server/essay/test.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/sun/bk/server/test.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/bk_war_exploded/WEB-INF/classes/main/sun/bk/server/servlet/UserServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/bk_war_exploded/WEB-INF/classes/main/sun/bk/server/servlet/UserServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/bk/main/sun/bk/server/servlet/UserServlet.class" afterPath="$PROJECT_DIR$/out/production/bk/main/sun/bk/server/servlet/UserServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/bk/test/TestMain.class" afterPath="$PROJECT_DIR$/out/production/bk/test/TestMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/bk.war" afterPath="$PROJECT_DIR$/target/bk.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bk.iml" afterPath="$PROJECT_DIR$/bk.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/bk_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/bk_war_exploded/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/sun/bk/server/servlet/UserServlet.java" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/servlet/UserServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/TestMain.java" afterPath="$PROJECT_DIR$/src/test/TestMain.java" />
-    </list>
+    <list default="true" id="05faecdf-2f8a-4839-826a-e92af4997b68" name="Default" comment="" />
     <ignored path="bk.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -82,8 +60,8 @@
       <file leaf-file-name="SMSUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/sun/bk/server/common/SMSUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+            <state relative-caret-position="23">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -226,10 +204,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -455,7 +433,7 @@
       <recent name="E:\gitHubRepository\bk\web" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestMain">
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
     <configuration default="false" name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -985,15 +963,15 @@
       <workItem from="1493201748394" duration="1915000" />
       <workItem from="1493203761414" duration="141000" />
       <workItem from="1493350820095" duration="8294000" />
-      <workItem from="1493370274660" duration="628000" />
+      <workItem from="1493370274660" duration="803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27143000" />
+    <option name="totallyTimeSpent" value="27318000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1006,11 +984,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32323232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21192053" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29425114" sideWeight="0.49415693" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20735608" sideWeight="0.49415693" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37089714" sideWeight="0.50584304" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1252,6 +1230,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1266,6 +1245,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
           <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1391,8 +1371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/sun/bk/server/common/SMSUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        <state relative-caret-position="23">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
