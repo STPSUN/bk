@@ -86,22 +86,27 @@ public class UserServlet extends HttpServlet {
     private void doUpdatePassword(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         int state = 0;
+        String msg = "";
         try
         {
             String userName = request.getParameter("userName");
             String oldPassword = request.getParameter("oldPassword");
             String newPassword = request.getParameter("newPassword");
-            boolean result = userService.updatePasswordByUserName(userName, newPassword, oldPassword);
-            if(result == true)
+            String result = userService.updatePasswordByUserName(userName, newPassword, oldPassword);
+            if(result.equals("1"))
             {
                 state = 1;
+            }else
+            {
+                msg = result;
             }
         }catch (Exception e)
         {
             e.printStackTrace();
+            msg = "发生错误";
         }
 
-        Common.setApi("ok", state, "updatePassword", response, request);
+        Common.setApi(state, msg, response);
     }
 
     private void doSendCode(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

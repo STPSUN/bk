@@ -46,11 +46,6 @@ public class TestMain {
 
     public void updateUser()
     {
-        boolean result = userService.updatePasswordByUserName("18850705207", "111", "000");
-        if(result == true)
-        {
-            System.out.println("ok");
-        }
     }
 
     public void sendSMS()

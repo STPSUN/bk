@@ -26,21 +26,39 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean updatePasswordByUserName(String userName, String newPassword, String oldPassword)
+    public String updatePasswordByUserName(String userName, String newPassword, String oldPassword)
     {
-        boolean result = false;
+        String msg = "";
         User user = userImpl.findUserByUserName(userName);
-        if(user != null)
+        if(user != null && user.getUserName().equals(userName))
         {
-            if(user.getPassword().equals(oldPassword) && !user.getPassword().equals(newPassword))
+            if(user.getPassword().equals(oldPassword))
             {
-                user.setPassword(newPassword);
-                userImpl.updateUser(user);
-                result = true;
+                if(!newPassword.isEmpty())
+                {
+                    if(!user.getPassword().equals(newPassword))
+                    {
+                        user.setPassword(newPassword);
+                        userImpl.updateUser(user);
+                        msg = "1";
+                    }else
+                    {
+                        msg = "原密码和新密码相同";
+                    }
+                }else
+                {
+                    msg = "请输入新密码";
+                }
+            }else
+            {
+                msg = "原密码错误";
             }
+        }else
+        {
+            msg = "该用户不存在";
         }
 
-        return result;
+        return msg;
     }
 
     @Override

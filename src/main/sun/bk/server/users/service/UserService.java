@@ -12,7 +12,7 @@ public interface UserService {
 
     public void addUser(User user);
 
-    public boolean updatePasswordByUserName(String userName, String newPassword, String oldPassword);
+    public String updatePasswordByUserName(String userName, String newPassword, String oldPassword);
 
     public boolean updatePasswordByCode(String userName, String code, String newPassword, HttpServletRequest request);
 }
