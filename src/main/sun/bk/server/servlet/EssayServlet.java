@@ -23,6 +23,7 @@ public class EssayServlet extends HttpServlet {
     private EssayServiceImpl essayService = new EssayServiceImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        response.setCharacterEncoding("UTF-8");
         String action = "toLogin";
         String ac = request.getParameter("action");
         if(ac != null)

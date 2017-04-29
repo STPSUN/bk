@@ -21,6 +21,7 @@ public class UserServlet extends HttpServlet {
     private UserServiceImpl userService = new UserServiceImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        response.setCharacterEncoding("UTF-8");
         System.out.println("into servlet************************************************");
         String action = "toLogin";
         String ac = request.getParameter("action");
@@ -57,7 +58,7 @@ public class UserServlet extends HttpServlet {
         String password = request.getParameter("password");
         ApiResponse apiResponse = new ApiResponse();
         PrintWriter out = response.getWriter();
-        if(userService.findUserByUserName(userName) != null)
+        if(!userName.isEmpty() && !password.isEmpty())
         {
             User user = userService.findUserByUserName(userName);
             if(user != null)
