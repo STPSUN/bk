@@ -33,6 +33,7 @@ public class UserImpl implements UserDao {
                 user.setAuthCode(rs.getString("auth_code"));
                 user.setSource(rs.getString("source"));
             }
+            ps.close();
 
         }catch (SQLException e)
         {
@@ -56,6 +57,7 @@ public class UserImpl implements UserDao {
             ps.setString(3, user.getAuthCode());
             ps.setString(4, user.getSource());
             result = ps.executeUpdate() == 1 ? true : false;
+            ps.close();
         }catch (SQLException e)
         {
             e.printStackTrace();
@@ -64,4 +66,27 @@ public class UserImpl implements UserDao {
         return result;
     }
 
+    @Override
+    public boolean updateUser(User user)
+    {
+        boolean result = false;
+        Connection connection = ConnectionJdbc.connectionJdbc();
+        PreparedStatement ps = null;
+        String sql = "UPDATE users SET password = ? WHERE user_name = ?";
+        try
+        {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, user.getPassword());
+            ps.setString(2, user.getUserName());
+
+            ps.executeUpdate();
+            ps.close();
+            result = true;
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
 }

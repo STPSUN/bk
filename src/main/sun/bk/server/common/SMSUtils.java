@@ -9,7 +9,7 @@ import com.taobao.api.request.AlibabaAliqinFcSmsNumSendRequest;
  * Created by SUN on 2017/3/2.
  */
 public class SMSUtils {
-    public String sendCheckCodeSMS(String code, String mobile)
+    public static String sendCheckCodeSMS(String code, String mobile)
     {
         String sms_url = "http://gw.api.taobao.com/router/rest";
         String sms_app_key = "23778836";

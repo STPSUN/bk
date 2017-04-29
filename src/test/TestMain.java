@@ -34,7 +34,23 @@ public class TestMain {
 //        test.getAllEssay();
 //        test.addDaily();
 //        test.getAllDaily();
-        test.sendSMS();
+//        test.sendSMS();
+        test.updateUser();
+    }
+
+    public void updatePasswordByCode()
+    {
+        String code = "000";
+        SMSUtils.sendCheckCodeSMS(code, "18850705207");
+    }
+
+    public void updateUser()
+    {
+        boolean result = userService.updatePasswordByUserName("18850705207", "111", "000");
+        if(result == true)
+        {
+            System.out.println("ok");
+        }
     }
 
     public void sendSMS()

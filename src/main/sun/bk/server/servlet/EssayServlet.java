@@ -1,6 +1,7 @@
 package main.sun.bk.server.servlet;
 
 import main.sun.bk.server.api.ApiResponse;
+import main.sun.bk.server.common.Common;
 import main.sun.bk.server.essay.model.Essay;
 import main.sun.bk.server.essay.service.impl.EssayServiceImpl;
 import net.sf.json.JSONObject;
@@ -22,8 +23,9 @@ import java.util.List;
 public class EssayServlet extends HttpServlet {
     private EssayServiceImpl essayService = new EssayServiceImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=utf-8");
         String action = "toLogin";
         String ac = request.getParameter("action");
         if(ac != null)
@@ -73,7 +75,7 @@ public class EssayServlet extends HttpServlet {
             e.printStackTrace();
         }
         String attribute = "getEssayByTitle";
-        setApi(essayList, state, attribute, response, request);
+        Common.setApi(essayList, state, attribute, response, request);
     }
 
     private void doGetEssayByRecommend(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -183,23 +185,23 @@ public class EssayServlet extends HttpServlet {
 //        request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
     }
 
-    private void setApi(Object object, int state, String attribute, HttpServletResponse response, HttpServletRequest request) throws IOException, ServletException
-    {
-        ApiResponse apiResponse = new ApiResponse();
-        PrintWriter out = response.getWriter();
-        if(state == 1)
-        {
-            apiResponse.setCode("200");
-            apiResponse.setMsg("success");
-            apiResponse.setData(object);
-        }else
-        {
-            apiResponse.setCode("201");
-        }
-
-        JSONObject json = JSONObject.fromObject(apiResponse);
-        out.println(json);
-//        request.setAttribute(attribute, json);
-//        request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
-    }
+//    private void setApi(Object object, int state, String attribute, HttpServletResponse response, HttpServletRequest request) throws IOException, ServletException
+//    {
+//        ApiResponse apiResponse = new ApiResponse();
+//        PrintWriter out = response.getWriter();
+//        if(state == 1)
+//        {
+//            apiResponse.setCode("200");
+//            apiResponse.setMsg("success");
+//            apiResponse.setData(object);
+//        }else
+//        {
+//            apiResponse.setCode("201");
+//        }
+//
+//        JSONObject json = JSONObject.fromObject(apiResponse);
+//        out.println(json);
+////        request.setAttribute(attribute, json);
+////        request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
+//    }
 }
