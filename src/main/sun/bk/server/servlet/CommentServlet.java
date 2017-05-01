@@ -33,12 +33,32 @@ public class CommentServlet extends HttpServlet {
         {
             doAddComment(request, response);
         }
+        if("deleteCommentById".equals(action))
+        {
+            doDeleteComment(request, response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
 
+    private void doDeleteComment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        int state = 0;
+        String msg = "";
+        try
+        {
+            String id = request.getParameter("commentId");
+            commentService.deleteCommentById(Integer.parseInt(id));
+            state = 1;
+        }catch (Exception e)
+        {
+            msg = "没有该评论ID";
+        }
+
+        Common.setApi(state, msg, response);
+    }
     private void doAddComment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         int state = 0;

@@ -19,6 +19,10 @@
         <servlet-name>CommentServlet</servlet-name>
         <servlet-class>main.sun.bk.server.servlet.CommentServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MsgServlet</servlet-name>
+        <servlet-class>main.sun.bk.server.servlet.MsgServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/users</url-pattern>
@@ -34,6 +38,10 @@
     <servlet-mapping>
         <servlet-name>CommentServlet</servlet-name>
         <url-pattern>/comment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MsgServlet</servlet-name>
+        <url-pattern>/msg</url-pattern>
     </servlet-mapping>
 
     

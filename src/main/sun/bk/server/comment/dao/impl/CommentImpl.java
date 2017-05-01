@@ -37,6 +37,25 @@ public class CommentImpl implements CommentDao{
     }
 
     @Override
+    public void deleteCommentById(int commentId)
+    {
+        Connection connection = ConnectionJdbc.connectionJdbc();
+        PreparedStatement ps = null;
+        String sql = "DELETE FROM comment WHERE comment_id=?";
+        try
+        {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, commentId);
+            ps.executeUpdate();
+            ps.close();
+            connection.close();
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public List<Comment> findCommentByEssayId(int essayId)
     {
         List<Comment> commentList= new ArrayList<Comment>();

@@ -11,4 +11,6 @@ public interface CommentService {
     public void addComment(Comment comment);
 
     public List<Comment> findCommentByEssayId(int essayId);
+
+    public void deleteCommentById(int commentId);
 }

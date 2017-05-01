@@ -8,6 +8,8 @@ import main.sun.bk.server.daily.service.impl.DailyServiceImpl;
 import main.sun.bk.server.essay.model.Essay;
 import main.sun.bk.server.essay.model.EssayDetail;
 import main.sun.bk.server.essay.service.impl.EssayServiceImpl;
+import main.sun.bk.server.msg.model.Msg;
+import main.sun.bk.server.msg.service.impl.MsgServiceImpl;
 import main.sun.bk.server.users.model.User;
 import main.sun.bk.server.users.service.impl.UserServiceImpl;
 import net.sf.json.JSONObject;
@@ -25,6 +27,7 @@ public class TestMain {
     private EssayServiceImpl essayService = new EssayServiceImpl();
     private DailyServiceImpl dailyService = new DailyServiceImpl();
     private CommentServiceImpl commentService = new CommentServiceImpl();
+    private MsgServiceImpl msgService = new MsgServiceImpl();
     public static void main(String[] args)
     {
         System.out.println("hello");
@@ -44,7 +47,23 @@ public class TestMain {
 //        test.addComment();
 //        test.findCommentByEssayId();
 //        test.getEssayById();
-        test.getEssayDetailById();
+//        test.getEssayDetailById();
+//        test.deleteCommentById();
+        test.addMsg();
+    }
+
+    public void addMsg()
+    {
+        Msg msg = new Msg();
+        msg.setUserName("111");
+        msg.setContent("good");
+
+        msgService.addMsg(msg);
+    }
+
+    public void deleteCommentById()
+    {
+        commentService.deleteCommentById(6);
     }
 
     public void getEssayDetailById()

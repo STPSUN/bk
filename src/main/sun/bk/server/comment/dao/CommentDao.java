@@ -11,4 +11,6 @@ public interface CommentDao {
     public boolean addComment(Comment comment);
 
     public List<Comment> findCommentByEssayId(int essayId);
+
+    public void deleteCommentById(int commentId);
 }

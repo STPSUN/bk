@@ -25,4 +25,9 @@ public class CommentServiceImpl implements CommentService{
         List<Comment> commentList = commentImpl.findCommentByEssayId(essayId);
         return commentList;
     }
+
+    @Override
+    public void deleteCommentById(int commentId) {
+        commentImpl.deleteCommentById(commentId);
+    }
 }
