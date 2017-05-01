@@ -29,8 +29,6 @@ public class Common {
 
         JSONObject json = JSONObject.fromObject(apiResponse);
         out.println(json);
-//        request.setAttribute(attribute, json);
-//        request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
     }
 
     public static void setApi(int state, String msg, HttpServletResponse response) throws IOException
@@ -50,4 +48,24 @@ public class Common {
         JSONObject json = JSONObject.fromObject(apiResponse);
         out.println(json);
     }
+
+    public static void setApi(Object object, int state, String msg, HttpServletResponse response) throws IOException
+    {
+        ApiResponse apiResponse = new ApiResponse();
+        PrintWriter out = response.getWriter();
+        if(state == 1)
+        {
+            apiResponse.setCode("200");
+            apiResponse.setMsg("success");
+            apiResponse.setData(object);
+        }else
+        {
+            apiResponse.setCode("201");
+            apiResponse.setMsg(msg);
+        }
+
+        JSONObject json = JSONObject.fromObject(apiResponse);
+        out.println(json);
+    }
+
 }

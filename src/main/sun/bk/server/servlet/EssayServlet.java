@@ -3,6 +3,7 @@ package main.sun.bk.server.servlet;
 import main.sun.bk.server.api.ApiResponse;
 import main.sun.bk.server.common.Common;
 import main.sun.bk.server.essay.model.Essay;
+import main.sun.bk.server.essay.model.EssayDetail;
 import main.sun.bk.server.essay.service.impl.EssayServiceImpl;
 import net.sf.json.JSONObject;
 
@@ -13,7 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -52,10 +55,65 @@ public class EssayServlet extends HttpServlet {
         {
             doGetEssayByTitle(request, response);
         }
+        if("getEssayByType".equals(action))
+        {
+            doGetEssayByType(request, response);
+        }
+        if("getEssayDetailById".equals(action))
+        {
+            doGetEssayDetailById(request, response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
+    }
+
+    private void doGetEssayDetailById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        int state = 0;
+        String msg = "";
+        EssayDetail essayDetail = null;
+        try
+        {
+            String essayId = request.getParameter("essayId");
+            essayDetail = essayService.getEssayDetailById(Integer.parseInt(essayId));
+            if(essayDetail != null)
+            {
+                state = 1;
+            }else
+            {
+                msg = "该文章没有评价";
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            msg = "为获取数据";
+        }
+
+        Common.setApi(essayDetail, state, msg, response);
+    }
+
+    private void doGetEssayByType(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        List<Essay> essayList = new ArrayList<Essay>();
+        int state = 0;
+        String msg = "";
+        try
+        {
+            String type = request.getParameter("type");
+            essayList = essayService.getAllEssayByType(type);
+            if(!essayList.isEmpty())
+            {
+                state = 1;
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            msg = "为获取到数据";
+        }
+
+        Common.setApi(essayList, state, msg, response);
     }
 
     private void doGetEssayByTitle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -154,12 +212,14 @@ public class EssayServlet extends HttpServlet {
             String content = request.getParameter("content");
             String img = request.getParameter("img");
             String etype = request.getParameter("etype");
+            SimpleDateFormat df = new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
 
             essay.setTitle(title);
             essay.setAuthor(author);
             essay.setContent(content);
             essay.setImg(img);
             essay.setEtype(etype);
+            essay.setCreateTime(df.format(new Date()));
             essayService.addEssay(essay);
 
             temp = 1;

@@ -15,6 +15,10 @@
         <servlet-name>DailyServlet</servlet-name>
         <servlet-class>main.sun.bk.server.servlet.DailyServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CommentServlet</servlet-name>
+        <servlet-class>main.sun.bk.server.servlet.CommentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/users</url-pattern>
@@ -27,7 +31,10 @@
         <servlet-name>DailyServlet</servlet-name>
         <url-pattern>/daily</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>CommentServlet</servlet-name>
+        <url-pattern>/comment</url-pattern>
+    </servlet-mapping>
 
     
 </web-app>

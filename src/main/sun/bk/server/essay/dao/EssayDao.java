@@ -19,4 +19,6 @@ public interface EssayDao {
     public List<Essay> findAllEssayByZanDesc();
 
     public List<Essay> findAllEssay();
+
+    public Essay findEssayById(int essayId);
 }

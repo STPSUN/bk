@@ -55,6 +55,7 @@ public class UserServlet extends HttpServlet {
         {
             doUpdatePasswordByCode(request, response);
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -144,6 +145,7 @@ public class UserServlet extends HttpServlet {
             String userName = request.getParameter("userName");
             String password = request.getParameter("password");
             String authCode = request.getParameter("authCode");
+            String nickname = request.getParameter("nickname");
             HttpSession session = request.getSession();
             String code = (String)session.getAttribute("code");
             String mobile = (String)session.getAttribute("mobile");
@@ -157,6 +159,7 @@ public class UserServlet extends HttpServlet {
                         {
                             user.setPassword(password);
                             user.setUserName(userName);
+                            user.setNickname(nickname);
                             userService.addUser(user);
                             state = 1;
                         }else

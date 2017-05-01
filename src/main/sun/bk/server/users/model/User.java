@@ -6,8 +6,8 @@ package main.sun.bk.server.users.model;
 public class User {
     private String userName;
     private String password;
-    private String authCode;
-    private String source;
+    private String nickname;
+    private String img;
 
     public String getUserName() {
         return userName;
@@ -25,19 +25,19 @@ public class User {
         this.password = password;
     }
 
-    public String getAuthCode() {
-        return authCode;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setAuthCode(String authCode) {
-        this.authCode = authCode;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public String getSource() {
-        return source;
+    public String getImg() {
+        return img;
     }
 
-    public void setSource(String source) {
-        this.source = source;
+    public void setImg(String img) {
+        this.img = img;
     }
 }

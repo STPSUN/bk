@@ -1,12 +1,16 @@
 package test;
 
+import main.sun.bk.server.comment.model.Comment;
+import main.sun.bk.server.comment.service.impl.CommentServiceImpl;
 import main.sun.bk.server.common.SMSUtils;
 import main.sun.bk.server.daily.model.Daily;
 import main.sun.bk.server.daily.service.impl.DailyServiceImpl;
 import main.sun.bk.server.essay.model.Essay;
+import main.sun.bk.server.essay.model.EssayDetail;
 import main.sun.bk.server.essay.service.impl.EssayServiceImpl;
 import main.sun.bk.server.users.model.User;
 import main.sun.bk.server.users.service.impl.UserServiceImpl;
+import net.sf.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,6 +24,7 @@ public class TestMain {
     private UserServiceImpl userService = new UserServiceImpl();
     private EssayServiceImpl essayService = new EssayServiceImpl();
     private DailyServiceImpl dailyService = new DailyServiceImpl();
+    private CommentServiceImpl commentService = new CommentServiceImpl();
     public static void main(String[] args)
     {
         System.out.println("hello");
@@ -35,7 +40,41 @@ public class TestMain {
 //        test.addDaily();
 //        test.getAllDaily();
 //        test.sendSMS();
-        test.updateUser();
+//        test.updateUser();
+//        test.addComment();
+//        test.findCommentByEssayId();
+//        test.getEssayById();
+        test.getEssayDetailById();
+    }
+
+    public void getEssayDetailById()
+    {
+        EssayDetail essayDetail = essayService.getEssayDetailById(7);
+        JSONObject json = JSONObject.fromObject(essayDetail);
+        System.out.println(json);
+    }
+
+    public void getEssayById()
+    {
+        Essay essay = essayService.getEssayById(6);
+        System.out.println(essay.getTitle());
+    }
+
+    public void findCommentByEssayId()
+    {
+        List<Comment> commentList = commentService.findCommentByEssayId(2);
+        for (Comment comment : commentList)
+        {
+            System.out.println(comment.getCommentId());
+        }
+    }
+
+    public void addComment()
+    {
+        Comment comment = new Comment();
+        comment.setEssayId(3);
+        comment.setComment("苏");
+        commentService.addComment(comment);
     }
 
     public void updatePasswordByCode()
@@ -88,8 +127,6 @@ public class TestMain {
         User user = new User();
         user.setUserName("111");
         user.setPassword("111");
-        user.setAuthCode("00");
-        user.setSource("1");
         userService.addUser(user);
     }
 

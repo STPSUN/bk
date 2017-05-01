@@ -225,4 +225,39 @@ public class EssayImpl implements EssayDao {
 
         return essayList;
     }
+
+    @Override
+    public Essay findEssayById(int essayId)
+    {
+        Connection connection = ConnectionJdbc.connectionJdbc();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Essay essay = null;
+        String sql = "select * from essay where essay_id = ?";
+
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, essayId);
+            rs = ps.executeQuery();
+            while (rs.next())
+            {
+                essay = new Essay();
+                essay.setEssayId(essayId);
+                essay.setTitle(rs.getString("title"));
+                essay.setAuthor(rs.getString("author"));
+                essay.setCreateTime(rs.getString("create_time"));
+                essay.setZan(rs.getInt("zan"));
+                essay.setImg(rs.getString("img"));
+                essay.setEtype(rs.getString("etype"));
+                essay.setRecommend(rs.getString("recommend"));
+            }
+            ps.close();
+
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return essay;
+    }
 }

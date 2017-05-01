@@ -30,8 +30,8 @@ public class UserImpl implements UserDao {
                 user = new User();
                 user.setUserName(userName);
                 user.setPassword(rs.getString("password"));
-                user.setAuthCode(rs.getString("auth_code"));
-                user.setSource(rs.getString("source"));
+                user.setNickname(rs.getString("nickname"));
+                user.setImg(rs.getString("img"));
             }
             ps.close();
 
@@ -48,14 +48,14 @@ public class UserImpl implements UserDao {
         boolean result = false;
         Connection connection = ConnectionJdbc.connectionJdbc();
         PreparedStatement ps = null;
-        String sql = "INSERT INTO users(user_name, password, auth_code, source) VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO users(user_name, password, nickname, img) VALUES(?, ?, ?, ?)";
         try
         {
             ps = connection.prepareStatement(sql);
             ps.setString(1, user.getUserName());
             ps.setString(2, user.getPassword());
-            ps.setString(3, user.getAuthCode());
-            ps.setString(4, user.getSource());
+            ps.setString(3, user.getNickname());
+            ps.setString(4, user.getImg());
             result = ps.executeUpdate() == 1 ? true : false;
             ps.close();
         }catch (SQLException e)

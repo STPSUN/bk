@@ -1,6 +1,7 @@
 package main.sun.bk.server.essay.service;
 
 import main.sun.bk.server.essay.model.Essay;
+import main.sun.bk.server.essay.model.EssayDetail;
 
 import java.util.List;
 
@@ -19,4 +20,8 @@ public interface EssayService {
     public List<Essay> getAllEssayByZanDesc();
 
     public List<Essay> getAllEssay();
+
+    public Essay getEssayById(int essayId);
+
+    public EssayDetail getEssayDetailById(int essayId);
 }
