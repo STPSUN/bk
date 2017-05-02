@@ -2,6 +2,7 @@ package main.sun.bk.server.servlet;
 
 import main.sun.bk.server.common.Common;
 import main.sun.bk.server.msg.model.Msg;
+import main.sun.bk.server.msg.model.MsgAll;
 import main.sun.bk.server.msg.service.impl.MsgServiceImpl;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by SUN on 2017/5/1.
@@ -33,10 +35,29 @@ public class MsgServlet extends HttpServlet {
         {
             doAddMsg(request, response);
         }
+        if("getAllMsg".equals(action))
+        {
+            doGetAllMsg(request, response);
+        }
+    }
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+    private void doGetAllMsg(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        int state = 0;
+        String msg = "";
+        List<MsgAll> msgAllList = msgService.getAllMsg();
+        if(!msgAllList.isEmpty())
+        {
+            state = 1;
+        }else
+        {
+            msg = "未获取到数据";
+        }
+
+        Common.setApi(msgAllList, state, msg, response);
     }
 
     private void doAddMsg(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

@@ -9,7 +9,10 @@ import main.sun.bk.server.essay.model.Essay;
 import main.sun.bk.server.essay.model.EssayDetail;
 import main.sun.bk.server.essay.service.impl.EssayServiceImpl;
 import main.sun.bk.server.msg.model.Msg;
+import main.sun.bk.server.msg.model.MsgAll;
 import main.sun.bk.server.msg.service.impl.MsgServiceImpl;
+import main.sun.bk.server.msgReply.model.MsgReply;
+import main.sun.bk.server.msgReply.service.impl.MsgReplyServiceImpl;
 import main.sun.bk.server.users.model.User;
 import main.sun.bk.server.users.service.impl.UserServiceImpl;
 import net.sf.json.JSONObject;
@@ -22,12 +25,12 @@ import java.util.List;
  * Created by SUN on 2017/4/24.
  */
 public class TestMain {
-//    private UserService userService;
     private UserServiceImpl userService = new UserServiceImpl();
     private EssayServiceImpl essayService = new EssayServiceImpl();
     private DailyServiceImpl dailyService = new DailyServiceImpl();
     private CommentServiceImpl commentService = new CommentServiceImpl();
     private MsgServiceImpl msgService = new MsgServiceImpl();
+    private MsgReplyServiceImpl msgReplyService = new MsgReplyServiceImpl();
     public static void main(String[] args)
     {
         System.out.println("hello");
@@ -49,7 +52,38 @@ public class TestMain {
 //        test.getEssayById();
 //        test.getEssayDetailById();
 //        test.deleteCommentById();
-        test.addMsg();
+//        test.addMsg();
+//        test.addMsgReply();
+//        test.getAllMsgreply();
+        test.getAllMsg();
+    }
+
+    public void getAllMsg()
+    {
+        List<MsgAll> msgAllList = msgService.getAllMsg();
+        for(MsgAll msgAll : msgAllList)
+        {
+            System.out.println(msgAll.getMsgId() + " " + msgAll.getReplyUser());
+        }
+    }
+
+    public void getAllMsgreply()
+    {
+        List<MsgReply> msgReplyList = msgReplyService.getAllMsgReply();
+        for(MsgReply msgReply : msgReplyList)
+        {
+            System.out.println(msgReply.getMsgId());
+        }
+    }
+
+    public void addMsgReply()
+    {
+        MsgReply msgReply = new MsgReply();
+        msgReply.setMsgId(2);
+        msgReply.setContent("谢谢评价");
+        msgReply.setReplyUser("122");
+
+        msgReplyService.addMsgReply(msgReply);
     }
 
     public void addMsg()
