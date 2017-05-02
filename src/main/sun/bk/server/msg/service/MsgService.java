@@ -12,4 +12,6 @@ public interface MsgService {
     public void addMsg(Msg msg);
 
     public List<MsgAll> getAllMsg();
+
+    public void deleteMsgById(int msgId);
 }

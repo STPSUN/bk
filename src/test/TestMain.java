@@ -2,6 +2,8 @@ package test;
 
 import main.sun.bk.server.comment.model.Comment;
 import main.sun.bk.server.comment.service.impl.CommentServiceImpl;
+import main.sun.bk.server.commentReply.model.CommentReply;
+import main.sun.bk.server.commentReply.service.impl.CommentReplyServiceImpl;
 import main.sun.bk.server.common.SMSUtils;
 import main.sun.bk.server.daily.model.Daily;
 import main.sun.bk.server.daily.service.impl.DailyServiceImpl;
@@ -31,6 +33,7 @@ public class TestMain {
     private CommentServiceImpl commentService = new CommentServiceImpl();
     private MsgServiceImpl msgService = new MsgServiceImpl();
     private MsgReplyServiceImpl msgReplyService = new MsgReplyServiceImpl();
+    private CommentReplyServiceImpl commentReplyService = new CommentReplyServiceImpl();
     public static void main(String[] args)
     {
         System.out.println("hello");
@@ -55,7 +58,30 @@ public class TestMain {
 //        test.addMsg();
 //        test.addMsgReply();
 //        test.getAllMsgreply();
-        test.getAllMsg();
+//        test.getAllMsg();
+//        test.deleteMsg();
+//        test.addCommentReply();
+        test.getCommentReplyById();
+    }
+
+    public void getCommentReplyById()
+    {
+        CommentReply commentReply = commentReplyService.getCommentReplyById(4);
+        System.out.println(commentReply.getCommentId() + " " + commentReply.getReplyTime());
+    }
+
+    public void addCommentReply()
+    {
+        CommentReply commentReply = new CommentReply();
+        commentReply.setReplyUser("11");
+        commentReply.setCommentId(2);
+        commentReply.setReplyContent("good");
+        commentReplyService.addCommentReply(commentReply);
+    }
+
+    public void deleteMsg()
+    {
+        msgService.deleteMsgById(1);
     }
 
     public void getAllMsg()

@@ -9,6 +9,9 @@ public class Evaluates {
     private String commentText;
     private String commentTime;
     private String userImg;
+    private String replyUser;
+    private String replyContent;
+    private String replyTime;
 
     public int getCommentId() {
         return commentId;
@@ -48,5 +51,29 @@ public class Evaluates {
 
     public void setUserImg(String userImg) {
         this.userImg = userImg;
+    }
+
+    public String getReplyUser() {
+        return replyUser;
+    }
+
+    public void setReplyUser(String replyUser) {
+        this.replyUser = replyUser;
+    }
+
+    public String getReplyContent() {
+        return replyContent;
+    }
+
+    public void setReplyContent(String replyContent) {
+        this.replyContent = replyContent;
+    }
+
+    public String getReplyTime() {
+        return replyTime;
+    }
+
+    public void setReplyTime(String replyTime) {
+        this.replyTime = replyTime;
     }
 }

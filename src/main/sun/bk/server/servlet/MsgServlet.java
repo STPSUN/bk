@@ -39,9 +39,37 @@ public class MsgServlet extends HttpServlet {
         {
             doGetAllMsg(request, response);
         }
+        if("deleteMsg".equals(action))
+        {
+            doDeleteMsg(request, response);
+        }
     }
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
+    }
+
+    private void doDeleteMsg(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        int state = 0;
+        String msg = "";
+        try
+        {
+            String id = request.getParameter("msgId");
+            if(!id.isEmpty())
+            {
+                msgService.deleteMsgById(Integer.parseInt(id));
+                state = 1;
+            }else
+            {
+                msg = "msgId不能为空";
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            msg = "删除失败";
+        }
+
+        Common.setApi(state, msg, response);
     }
 
     private void doGetAllMsg(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

@@ -28,4 +28,10 @@ public class MsgServiceImpl implements MsgService{
         }
         return null;
     }
+
+    @Override
+    public void deleteMsgById(int msgId)
+    {
+        msgImpl.deleteMsgById(msgId);
+    }
 }

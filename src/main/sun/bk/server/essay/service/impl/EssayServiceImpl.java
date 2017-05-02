@@ -3,6 +3,8 @@ package main.sun.bk.server.essay.service.impl;
 import main.sun.bk.server.comment.dao.impl.CommentImpl;
 import main.sun.bk.server.comment.model.Comment;
 import main.sun.bk.server.comment.model.Evaluates;
+import main.sun.bk.server.commentReply.dao.impl.CommentReplyImpl;
+import main.sun.bk.server.commentReply.model.CommentReply;
 import main.sun.bk.server.essay.dao.impl.EssayImpl;
 import main.sun.bk.server.essay.model.Essay;
 import main.sun.bk.server.essay.model.EssayDetail;
@@ -20,6 +22,7 @@ public class EssayServiceImpl implements EssayService{
     private CommentImpl commentImpl = new CommentImpl();
     private EssayImpl essayImpl = new EssayImpl();
     private UserImpl userImpl = new UserImpl();
+    private CommentReplyImpl commentReplyImpl = new CommentReplyImpl();
     public void addEssay(Essay essay)
     {
         essayImpl.addEssay(essay);
@@ -87,10 +90,22 @@ public class EssayServiceImpl implements EssayService{
                     evaluates.setCommentId(comment.getCommentId());
                     evaluates.setUserName(comment.getUserName());
                     evaluates.setCommentText(comment.getComment());
+                    evaluates.setCommentTime(comment.getCommentTime());
 
                     User user = userImpl.findUserByUserName(comment.getUserName());
                     evaluates.setUserImg(user.getImg());
 
+                    try
+                    {
+                        CommentReply commentReply = commentReplyImpl.findCommentReplyById(comment.getCommentId());
+                        evaluates.setReplyUser(commentReply.getReplyUser());
+                        evaluates.setReplyContent(commentReply.getReplyContent());
+                        evaluates.setReplyTime(commentReply.getReplyTime());
+                    }catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                    
                     evaluatesList.add(evaluates);
                 }
                 essayDetail.setEvaluatesList(evaluatesList);

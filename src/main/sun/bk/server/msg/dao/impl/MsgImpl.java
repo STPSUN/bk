@@ -75,4 +75,25 @@ public class MsgImpl implements MsgDao{
 
         return msgAllList;
     }
+
+    @Override
+    public boolean deleteMsgById(int msgId)
+    {
+        boolean result = false;
+        Connection connection = ConnectionJdbc.connectionJdbc();
+        PreparedStatement ps = null;
+        String sql = "DELETE FROM msg WHERE msg_id=?";
+        try
+        {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, msgId);
+            ps.executeUpdate();
+            ps.close();
+            connection.close();
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }

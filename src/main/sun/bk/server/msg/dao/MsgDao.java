@@ -12,4 +12,6 @@ public interface MsgDao {
     public boolean addMsg(Msg msg);
 
     public List<MsgAll> getAllMsg();
+
+    public boolean deleteMsgById(int msgId);
 }
