@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05faecdf-2f8a-4839-826a-e92af4997b68" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/commentReply/dao/CommentReplyDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/commentReply/dao/impl/CommentReplyImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/commentReply/model/CommentReply.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/commentReply/service/CommentReplyService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/commentReply/service/impl/CommentReplyServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/servlet/CommentReplyServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/bk_war_exploded/WEB-INF/classes/test/TestMain.class" afterPath="$PROJECT_DIR$/out/artifacts/bk_war_exploded/WEB-INF/classes/test/TestMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/bk/test/TestMain.class" afterPath="$PROJECT_DIR$/out/production/bk/test/TestMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/bk.war" afterPath="$PROJECT_DIR$/target/bk.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/sun/bk/server/comment/model/Evaluates.java" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/comment/model/Evaluates.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/sun/bk/server/essay/service/impl/EssayServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/essay/service/impl/EssayServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/sun/bk/server/msg/dao/MsgDao.java" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/msg/dao/MsgDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/sun/bk/server/msg/dao/impl/MsgImpl.java" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/msg/dao/impl/MsgImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/sun/bk/server/msg/service/MsgService.java" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/msg/service/MsgService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/sun/bk/server/msg/service/impl/MsgServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/msg/service/impl/MsgServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/sun/bk/server/servlet/MsgServlet.java" afterPath="$PROJECT_DIR$/src/main/sun/bk/server/servlet/MsgServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/TestMain.java" afterPath="$PROJECT_DIR$/src/test/TestMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-    </list>
+    <list default="true" id="05faecdf-2f8a-4839-826a-e92af4997b68" name="Default" comment="" />
     <ignored path="bk.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -78,8 +58,8 @@
       <file leaf-file-name="EssayServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/sun/bk/server/essay/service/impl/EssayServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+            <state relative-caret-position="322">
+              <caret line="103" column="40" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1167,12 +1147,12 @@
       <workItem from="1493619047277" duration="9469000" />
       <workItem from="1493640457206" duration="7972000" />
       <workItem from="1493706694631" duration="7323000" />
-      <workItem from="1493719094685" duration="5300000" />
+      <workItem from="1493719094685" duration="5337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91959000" />
+    <option name="totallyTimeSpent" value="91996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1188,7 +1168,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29580575" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29580575" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1764,8 +1744,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/sun/bk/server/essay/service/impl/EssayServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+        <state relative-caret-position="322">
+          <caret line="103" column="40" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

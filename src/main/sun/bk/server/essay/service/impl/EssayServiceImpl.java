@@ -105,7 +105,7 @@ public class EssayServiceImpl implements EssayService{
                     {
                         e.printStackTrace();
                     }
-                    
+
                     evaluatesList.add(evaluates);
                 }
                 essayDetail.setEvaluatesList(evaluatesList);
