@@ -3,7 +3,6 @@ package main.sun.bk.server.msg.dao.impl;
 import main.sun.bk.server.common.ConnectionJdbc;
 import main.sun.bk.server.msg.dao.MsgDao;
 import main.sun.bk.server.msg.model.Msg;
-import main.sun.bk.server.msg.model.MsgAll;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -39,17 +38,14 @@ public class MsgImpl implements MsgDao{
     }
 
     @Override
-    public List<MsgAll> getAllMsg()
+    public List<Msg> getAllMsg()
     {
-        List<MsgAll> msgAllList = new ArrayList<MsgAll>();
+        List<Msg> msgList = new ArrayList<Msg>();
         PreparedStatement ps = null;
         ResultSet rs = null;
 
         Connection connection = ConnectionJdbc.connectionJdbc();
-        String sql = "SELECT m.msg_id, m.user_name, m.content, m.msg_time, mr.reply_user, mr.reply_content, mr.reply_time " +
-                "FROM  msg m " +
-                "JOIN msg_reply mr " +
-                "ON m.msg_id = mr.msg_id";
+        String sql = "SELECT * FROM msg";
 
         try
         {
@@ -57,23 +53,20 @@ public class MsgImpl implements MsgDao{
             rs = ps.executeQuery();
             while (rs.next())
             {
-                MsgAll msgAll = new MsgAll();
-                msgAll.setMsgId(rs.getInt("msg_id"));
-                msgAll.setMsgUser(rs.getString("user_name"));
-                msgAll.setContent(rs.getString("content"));
-                msgAll.setMsgTime(rs.getString("msg_time"));
-                msgAll.setReplyUser(rs.getString("reply_user"));
-                msgAll.setReplyContent(rs.getString("reply_content"));
-                msgAll.setReplyTime(rs.getString("reply_time"));
+                Msg msg = new Msg();
+                msg.setMsgId(rs.getInt("msg_id"));
+                msg.setUserName(rs.getString("user_name"));
+                msg.setMsgTime(rs.getString("msg_time"));
+                msg.setContent(rs.getString("content"));
 
-                msgAllList.add(msgAll);
+                msgList.add(msg);
             }
         }catch (SQLException e)
         {
             e.printStackTrace();
         }
 
-        return msgAllList;
+        return msgList;
     }
 
     @Override

@@ -26,4 +26,15 @@ public class MsgReplyServiceImpl implements MsgReplyService{
         }
         return null;
     }
+
+    @Override
+    public List<MsgReply> getMsgReplyById(int msgId)
+    {
+        List<MsgReply> msgReplyList = msgReplyImpl.getMsgReplyById(msgId);
+        if(!msgReplyList.isEmpty())
+        {
+            return msgReplyList;
+        }
+        return null;
+    }
 }

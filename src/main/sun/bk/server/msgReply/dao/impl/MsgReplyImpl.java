@@ -57,7 +57,7 @@ public class MsgReplyImpl implements MsgReplyDao{
                 MsgReply msgReply = new MsgReply();
                 msgReply.setMsgId(rs.getInt("msg_id"));
                 msgReply.setReplyUser(rs.getString("reply_user"));
-                msgReply.setContent(rs.getString("content"));
+                msgReply.setContent(rs.getString("reply_content"));
                 msgReply.setReplyTime(rs.getString("reply_time"));
 
                 msgReplyList.add(msgReply);
@@ -67,6 +67,41 @@ public class MsgReplyImpl implements MsgReplyDao{
             e.printStackTrace();
         }
 
+        return msgReplyList;
+    }
+
+    @Override
+    public List<MsgReply> getMsgReplyById(int msgId)
+    {
+        List<MsgReply> msgReplyList = new ArrayList<MsgReply>();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        Connection connection = ConnectionJdbc.connectionJdbc();
+        String sql = "select * from msg_reply where msg_id = ?";
+
+        try
+        {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, msgId);
+            rs = ps.executeQuery();
+            while (rs.next())
+            {
+                MsgReply msgReply = new MsgReply();
+                msgReply.setMsgId(rs.getInt("msg_id"));
+                msgReply.setContent(rs.getString("reply_content"));
+                msgReply.setReplyUser(rs.getString("reply_user"));
+                msgReply.setReplyTime(rs.getString("reply_time"));
+
+                msgReplyList.add(msgReply);
+            }
+
+            ps.close();
+            connection.close();
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
         return msgReplyList;
     }
 }

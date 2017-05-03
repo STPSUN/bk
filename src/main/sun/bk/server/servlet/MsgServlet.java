@@ -2,7 +2,7 @@ package main.sun.bk.server.servlet;
 
 import main.sun.bk.server.common.Common;
 import main.sun.bk.server.msg.model.Msg;
-import main.sun.bk.server.msg.model.MsgAll;
+import main.sun.bk.server.msg.model.MsgAll2;
 import main.sun.bk.server.msg.service.impl.MsgServiceImpl;
 
 import javax.servlet.ServletException;
@@ -76,8 +76,8 @@ public class MsgServlet extends HttpServlet {
     {
         int state = 0;
         String msg = "";
-        List<MsgAll> msgAllList = msgService.getAllMsg();
-        if(!msgAllList.isEmpty())
+        List<MsgAll2> msgAll2List = msgService.getAllMsg();
+        if(!msgAll2List.isEmpty())
         {
             state = 1;
         }else
@@ -85,7 +85,7 @@ public class MsgServlet extends HttpServlet {
             msg = "未获取到数据";
         }
 
-        Common.setApi(msgAllList, state, msg, response);
+        Common.setApi(msgAll2List, state, msg, response);
     }
 
     private void doAddMsg(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

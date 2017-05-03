@@ -11,4 +11,6 @@ public interface MsgReplyService {
     public void addMsgReply(MsgReply msgReply);
 
     public List<MsgReply> getAllMsgReply();
+
+    public List<MsgReply> getMsgReplyById(int msgId);
 }

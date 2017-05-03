@@ -11,4 +11,7 @@ public interface MsgReplyDao {
     public boolean addMsgReply(MsgReply msgReply);
 
     public List<MsgReply> getAllMsgReply();
+
+    public List<MsgReply> getMsgReplyById(int msgId);
+
 }

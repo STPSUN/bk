@@ -11,12 +11,13 @@ import main.sun.bk.server.essay.model.Essay;
 import main.sun.bk.server.essay.model.EssayDetail;
 import main.sun.bk.server.essay.service.impl.EssayServiceImpl;
 import main.sun.bk.server.msg.model.Msg;
-import main.sun.bk.server.msg.model.MsgAll;
+import main.sun.bk.server.msg.model.MsgAll2;
 import main.sun.bk.server.msg.service.impl.MsgServiceImpl;
 import main.sun.bk.server.msgReply.model.MsgReply;
 import main.sun.bk.server.msgReply.service.impl.MsgReplyServiceImpl;
 import main.sun.bk.server.users.model.User;
 import main.sun.bk.server.users.service.impl.UserServiceImpl;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import java.text.SimpleDateFormat;
@@ -58,10 +59,20 @@ public class TestMain {
 //        test.addMsg();
 //        test.addMsgReply();
 //        test.getAllMsgreply();
-//        test.getAllMsg();
+        test.getAllMsg();
 //        test.deleteMsg();
 //        test.addCommentReply();
-        test.getCommentReplyById();
+//        test.getCommentReplyById();
+//        test.getMsgReplyById();
+    }
+
+    public void getMsgReplyById()
+    {
+        List<MsgReply> msgReplyList = msgReplyService.getMsgReplyById(6);
+        for (MsgReply msgReply : msgReplyList)
+        {
+            System.out.println(msgReply.getMsgId());
+        }
     }
 
     public void getCommentReplyById()
@@ -86,11 +97,9 @@ public class TestMain {
 
     public void getAllMsg()
     {
-        List<MsgAll> msgAllList = msgService.getAllMsg();
-        for(MsgAll msgAll : msgAllList)
-        {
-            System.out.println(msgAll.getMsgId() + " " + msgAll.getReplyUser());
-        }
+        List<MsgAll2> msgList = msgService.getAllMsg();
+        JSONArray array = JSONArray.fromObject(msgList);
+        System.out.println(array);
     }
 
     public void getAllMsgreply()

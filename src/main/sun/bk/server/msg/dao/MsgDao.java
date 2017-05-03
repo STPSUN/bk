@@ -1,7 +1,6 @@
 package main.sun.bk.server.msg.dao;
 
 import main.sun.bk.server.msg.model.Msg;
-import main.sun.bk.server.msg.model.MsgAll;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ import java.util.List;
 public interface MsgDao {
     public boolean addMsg(Msg msg);
 
-    public List<MsgAll> getAllMsg();
+    public List<Msg> getAllMsg();
 
     public boolean deleteMsgById(int msgId);
 }

@@ -1,7 +1,7 @@
 package main.sun.bk.server.msg.service;
 
 import main.sun.bk.server.msg.model.Msg;
-import main.sun.bk.server.msg.model.MsgAll;
+import main.sun.bk.server.msg.model.MsgAll2;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public interface MsgService {
     public void addMsg(Msg msg);
 
-    public List<MsgAll> getAllMsg();
+    public List<MsgAll2> getAllMsg();
 
     public void deleteMsgById(int msgId);
 }
